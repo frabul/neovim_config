@@ -3,5 +3,9 @@
 -- Add any additional keymaps here
 --
 local map = LazyVim.safe_keymap_set
-map("n", "<Space>xs", "<cmd>Trouble lsp_document_symbols win.position=right<CR>",
-  { desc = "(Trouble) Open buffer symbols" })
+map(
+  "n",
+  "<Space>xs",
+  "<cmd>Trouble lsp_document_symbols win.position=right<CR>",
+  { desc = "(Trouble) Open buffer symbols" }
+)
