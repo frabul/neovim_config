@@ -20,4 +20,22 @@ return {
       })
     end,
   },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = {
+  --       rust_analyzer = {
+  --         keys = {
+  --           {
+  --             "K",
+  --             function()
+  --               vim.cmd.RustLsp({ "hover", "actions" })
+  --             end,
+  --             desc = "Rust hover actions",
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }

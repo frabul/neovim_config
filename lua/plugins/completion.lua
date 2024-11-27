@@ -23,28 +23,18 @@ return {
       local mapping = opts.mapping
       -- remove the default <CR> mapping
       mapping["<CR>"] = nil
-      mapping["<Tab>"] = LazyVim.cmp.confirm({ select = true })
+      mapping["<Tab>"] = function(fallback)
+        -- we use tab also to jump to the next snippet field
+        if vim.snippet.active() then
+          vim.snippet.jump(1)
+        else
+          local f = LazyVim.cmp.confirm({ select = true })
+          return f(fallback)
+        end
+      end
     end,
   },
   { "saadparwaiz1/cmp_luasnip" },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = {
-  --     servers = {
-  --       rust_analyzer = {
-  --         keys = {
-  --           {
-  --             "K",
-  --             function()
-  --               vim.cmd.RustLsp({ "hover", "actions" })
-  --             end,
-  --             desc = "Rust hover actions",
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
   {
     "garymjr/nvim-snippets",
     enabled = false,
