@@ -25,11 +25,13 @@ return {
       mapping["<CR>"] = nil
       mapping["<Tab>"] = function(fallback)
         -- we use tab also to jump to the next snippet field
-        if vim.snippet.active() then
-          vim.snippet.jump(1)
-        else
+        if LazyVim.cmp.visible() then
+          print("Snippet not active!")
           local f = LazyVim.cmp.confirm({ select = true })
           return f(fallback)
+        elseif vim.snippet.active() then
+          vim.snippet.jump(1)
+          print("Snippet is active, jumping")
         end
       end
     end,
