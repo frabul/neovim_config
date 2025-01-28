@@ -24,14 +24,19 @@ return {
       -- remove the default <CR> mapping
       mapping["<CR>"] = nil
       mapping["<Tab>"] = function(fallback)
+        local cmp = require("cmp")
         -- we use tab also to jump to the next snippet field
-        if LazyVim.cmp.visible() then
+
+        if cmp and cmp.visible() then
           print("Snippet not active!")
           local f = LazyVim.cmp.confirm({ select = true })
           return f(fallback)
         elseif vim.snippet.active() then
           vim.snippet.jump(1)
           print("Snippet is active, jumping")
+        else
+          print("No snippet active")
+          return fallback()
         end
       end
     end,
@@ -41,4 +46,15 @@ return {
     "garymjr/nvim-snippets",
     enabled = false,
   },
+
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   event = "BufEnter",
+  --   ---  add key mapping <C-;> to accept word in codeium
+  --   config = function()
+  --     vim.keymap.set("i", "<C-;>", function()
+  --       return vim.fn["codeium#AcceptNextWord"]()
+  --     end, { expr = true })
+  --   end,
+  -- },
 }
