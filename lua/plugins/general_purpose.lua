@@ -45,7 +45,7 @@ return {
       { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
     },
     lazy = false,
-    branch = "regexp", -- This is the regexp branch, use this for the new version
+    branch = "main", -- This is the regexp branch, use this for the new version
     keys = {
       { ",v", "<cmd>VenvSelect<cr>" },
     },
