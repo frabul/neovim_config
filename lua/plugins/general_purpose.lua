@@ -49,27 +49,8 @@ return {
     keys = {
       { ",v", "<cmd>VenvSelect<cr>" },
     },
-    ---@type venv-selector.Config
     opts = {
       -- Your settings go here
     },
   },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = {
-  --     servers = {
-  --       rust_analyzer = {
-  --         keys = {
-  --           {
-  --             "K",
-  --             function()
-  --               vim.cmd.RustLsp({ "hover", "actions" })
-  --             end,
-  --             desc = "Rust hover actions",
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
 }
