@@ -16,3 +16,11 @@ map("n", "<leader>ft", function()
   local buffer_dir = vim.fn.fnamemodify(buffer_path, ":h")
   Snacks.terminal(nil, { cwd = buffer_dir })
 end, { desc = "Terminal (Buffer dir)" })
+
+vim.keymap.set({ "v" }, "<C-a>", "<cmd>'<,'>CodeCompanion<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<C-a>", "<cmd>CodeCompanion #{buffer}<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<Leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
