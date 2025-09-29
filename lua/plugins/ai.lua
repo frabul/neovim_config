@@ -25,23 +25,17 @@ return {
     },
     adapters = {
       http = {
-        gemini = function()
-          return require("codecompanion.adapters").extend("gemini", {
-            env = {
-              api_key = "AIzaSyDiydMa0tVfZFNnBoLShu1fBF9pBJEzVQI",
-            },
-          })
-        end,
         openrouter = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
             env = {
               url = "https://openrouter.ai/api",
-              api_key = "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",
+              api_key = "OPENROUTER_API_KEY",
               chat_url = "/v1/chat/completions",
             },
             schema = {
               model = {
-                default = "x-ai/grok-4-fast:free",
+                -- default = "nvidia/nemotron-nano-9b-v2:free",
+                default = "qwen/qwen3-coder:free",
               },
             },
           })
