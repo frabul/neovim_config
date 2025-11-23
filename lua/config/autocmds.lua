@@ -4,7 +4,7 @@
 local function set_kitty_window_title()
   print("Setting window title")
   local cwd = vim.fn.getcwd()
-  vim.fn.system("kitty @ set-window-title NeoVim - " .. cwd)
+  vim.fn.system("kitty @ set-window-title NeoVim - " .. cwd .. " - " .. vim.fn.expand("%:t"))
 end
 -- run on VimEnter
 vim.api.nvim_create_autocmd("VimEnter", {
@@ -14,5 +14,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- run set_kitty_window_title when the cwd changes
 vim.api.nvim_create_autocmd("DirChanged", {
   pattern = "global",
+  callback = set_kitty_window_title,
+})
+-- run set_kitty_window_title when the buffer changes
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
   callback = set_kitty_window_title,
 })
