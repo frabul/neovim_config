@@ -13,12 +13,15 @@ return {
     "folke/edgy.nvim",
     opts = function(_, opts)
       opts.right = opts.right or {}
-      table.insert(opts.right, {
-        ft = "copilot-chat",
-        title = "Copilot Chat",
-        size = { width = 50 },
-      })
+      for _, item in ipairs(opts.right) do
+        if item.title == "Database" then
+          item.pinned = false
+          break
+        end
+      end
     end,
+  },
+  {
     "folke/persistence.nvim",
     enabled = false,
   },
