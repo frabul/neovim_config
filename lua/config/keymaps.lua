@@ -24,3 +24,5 @@ vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, si
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
+
+vim.keymap.set('i', '<C-l>', '<Right>', { noremap = true })
