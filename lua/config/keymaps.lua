@@ -19,10 +19,14 @@ end, { desc = "Terminal (Buffer dir)" })
 
 -- vim.keymap.set({ "v" }, "<C-a>", "<cmd>'<,'>CodeCompanion<cr>", { noremap = true, silent = true })
 -- vim.keymap.set({ "n" }, "<C-a>", "<cmd>CodeCompanion #{buffer}<cr>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "<Leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<Leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
 vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
 
 vim.keymap.set('i', '<C-l>', '<Right>', { noremap = true })
+vim.keymap.set('n', '<Leader>aa', 'CopilotChatToggle', { noremap = true })
+vim.keymap.set('n', '<Leader>ag', 'Sidekick nes apply', { noremap = true })
+vim.keymap.set('n', '<Leader>aj', 'Sidekick nes jump', { noremap = true })
+
