@@ -116,5 +116,27 @@ return {
       model = "auto",
     },
   },
+  {
+    "folke/sidekick.nvim",
+    opts = {
+      nes = {
+        enabled = false,
+      },
+      cli = {
+        tools = {
+          pi_sandboxed = {
+            cmd = { "pi_sandboxed" },
+            keys = {
+              acx = {
+                "<C-M-x>",
+                function(t)
+                  vim.api.nvim_chan_send(vim.bo[t.buf].channel, "\x1b[120;7u")
+                end,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }
--- Copilot Chat configuration removed: now included above as a plugin entry.

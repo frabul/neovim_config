@@ -25,8 +25,7 @@ vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, si
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
 
-vim.keymap.set('i', '<C-l>', '<Right>', { noremap = true })
-vim.keymap.set('n', '<Leader>aa', 'CopilotChatToggle', { noremap = true })
-vim.keymap.set('n', '<Leader>ag', 'Sidekick nes apply', { noremap = true })
-vim.keymap.set('n', '<Leader>aj', 'Sidekick nes jump', { noremap = true })
-
+vim.keymap.set("i", "<C-l>", "<Right>", { noremap = true })
+vim.keymap.set("n", "<Leader>aa", "<cmd>CopilotChatToggle<cr>", { noremap = true })
+vim.keymap.set("n", "<Leader>ag", "<cmd>Sidekick nes apply<cr>", { noremap = true })
+vim.keymap.set("n", "<Leader>aj", "<cmd>Sidekick nes jump<cr>", { noremap = true })
