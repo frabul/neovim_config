@@ -4,7 +4,7 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
-    "LazyVim/LazyVim",
+    "frabul/LazyVim",
     opts = {
       colorscheme = "catppuccin-mocha",
     },
